@@ -171,8 +171,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Configurar el observador para detectar qué sección está visible
     const scrollSpyOptions = {
-        threshold: 0.3,  // Activa cuando el 30% de la sección es visible
-        rootMargin: '-50px 0px -50% 0px'  // Ajusta según necesites
+        threshold: 0.1,  // Activa cuando el 10% de la sección es visible
+        rootMargin: '0px 0px -30% 0px'  // Menos restrictivo para secciones pequeñas
     };
     
     const scrollSpyObserver = new IntersectionObserver((entries) => {
