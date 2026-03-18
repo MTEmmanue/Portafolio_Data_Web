@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline de Emisiones CO2 - Emmanuel Tapia</title>
+    <link rel="stylesheet" href="/Styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+       <div class="logo" style="display: flex; align-items: center;">
+            <i class="fas fa-circle-nodes data-navbar-icon"></i>
+            
+            <span style="font-weight: 700; font-size: 1.3rem; color: #fff;">Em.Data</span>
+        </div>
+
+        <div class="nav-actions">
+            <ul class="nav-links">
+                <li><a href="../index.html#inicio">Inicio</a></li>
+                <li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+                <li><a href="../index.html#proyectos"  class="active">Proyectos</a></li>
+            </ul>
+
+                <a href="https://www.linkedin.com/in/emmanuel-mtapia/" target="_blank" class="icon-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/MTEmmanue" target="_blank" class="icon-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:emmanuel.tp.2024@gmail.com" class="icon-link">
+                    <i class="far fa-envelope"></i>
+                </a>
+                <a href="../index.html#proyectos" class="btn-primary">
+                    Ver proyectos 
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+        </div>
+    </nav>
+
+
+    <section class="project-hero container">
+        <div class="project-hero-content">
+            <a href="../index.html#proyectos" class="back-link"><i class="fas fa-arrow-left"></i> Volver al portafolio</a>
+            
+            <h1>Pipeline de Predicción de Emisiones de CO2</h1>
+            
+            <p class="project-subtitle">
+                Desarrollo de un sistema modular de Machine Learning "End-to-End". Desde la ingeniería de datos hasta la 
+                predicción precisa, enfocado en código limpio y escalable.
+            </p>
+
+            <div class="tech-stack">
+                <span class="tag">Python</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">Pipeline Estructurado</span>
+                <span class="tag">Regresión Lineal</span>
+                <span class="tag">Pandas</span>
+            </div>
+            
+            <div class="hero-buttons" style="margin-top: 40px;">
+                <a href="https://github.com/MTEmmanue/Proyecto_Regresi-n_Lineal_Pipeline" target="_blank" class="btn-primary">
+                    Ver Repositorio <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+        <div class="project-hero-image">
+            <img src="/img/actual_vs_predicted (1).png" alt="Gráfico de Regresión Lineal">
+        </div>
+    </section>
+
+    
+   <section class="project-section container">
+    <h2>El Reto y los Datos</h2>
+        <p class="section-intro">
+            El problema es que las empresas y diseñadores de vehículos enfrentan incertidumbre al <strong>estimar las emisiones de CO₂ de sus activos</strong>, 
+            lo que puede generar costos y riesgos financieros. Para resolverlo, desarrollé un pipeline que entrena un modelo de Regresión Lineal capaz de predecir las 
+            emisiones según especificaciones mecánicas exactas, eliminando la especulación y ofreciendo resultados confiables para la toma de decisiones.  
+        </p>
+
+        <div class="results-grid">
+            
+            <div class="metrics-card">
+                <h3 style="margin-bottom: 24px; color: white;">Definición de Variables</h3>
+                
+                <div class="metric-row">
+                    <span class="metric-name" style=" font-weight: 700;">
+                        <i class="fas fa-bullseye"></i> Objetivo (Y)
+                    </span>
+                    <span class="metric-val" style="font-size: 1.1rem;">Emisiones CO2</span>
+                </div>
+                
+                <div class="metric-row" style="align-items: flex-start; flex-direction: column; gap: 10px;">
+                    <span class="metric-name" style="font-weight: 700;">
+                        <i class="fas fa-cogs"></i> Predictoras (X)
+                    </span>
+                    <div style="font-family: monospace; color: white; font-size: 1rem; line-height: 1.6;">
+                        • Tamaño Motor (L)<br>
+                        • Cilindros<br>
+                        • Consumo Combustible
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <div class="findings-content" style="padding-left: 20px;">
+                <h3>Contexto del Dataset</h3>
+                <ul>
+                    <li style="margin-bottom: 20px;">
+                        <strong>Fuente Oficial:</strong> Utilicé el dataset <em>"CO2 Emission by Vehicles"</em> (Fuente: Gobierno de Canadá / Kaggle). Este conjunto de datos reales permite modelar el comportamiento exacto de emisiones según especificaciones de ingeniería.
+                    </li>
+                    <li style="margin-bottom: 20px;">
+                        <strong>El Problema:</strong> Comprar vehículos sin conocer su huella de carbono real expone a la empresa a multas futuras.
+                    </li>
+                    <li style="margin-bottom: 20px;">
+                        <strong>La Solución:</strong> Entrenar un modelo con datos históricos de consumo y cilindraje, transformando especificaciones técnicas en predicciones financieras precisas.
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+</section>
+
+
+    <section class="project-section container bg-alt">
+        <h2>Impacto y Valor en el Negocio</h2>
+        <p class="section-intro">
+            Más allá del código, este proyecto resuelve un problema real. Aquí explico el valor práctico de esta solución para una empresa automotriz o regulatoria.
+        </p>
+
+        <div class="business-value-container">
+            <div class="biz-card">
+                <h3><i class="fas fa-shield-alt"></i> Cumplimiento Normativo</h3>
+                <p>Permite estimar rápidamente si nuevos prototipos de vehículos cumplirán con las regulaciones ambientales antes de realizar costosas pruebas físicas, reduciendo riesgos de multas.</p>
+            </div>
+
+            <div class="biz-card">
+                <h3><i class="fas fa-chart-line"></i> Optimización de Diseño</h3>
+                <p>Identifica qué variables (como el tamaño del motor vs. consumo) impactan más en la contaminación, guiando a los ingenieros a diseñar motores más eficientes y limpios.</p>
+            </div>
+
+            <div class="biz-card">
+                <h3><i class="fas fa-cogs"></i> Eficiencia Operativa</h3>
+                <p>Automatiza el cálculo de emisiones. Lo que antes requería pruebas de laboratorio manuales para cada iteración, ahora se puede predecir digitalmente en segundos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container">
+        <h2>Resultados Técnicos del Modelo</h2>
+        <p class="section-intro">
+            Evaluación rigurosa del desempeño del modelo utilizando métricas estándar de la industria en un conjunto de datos de prueba independiente.
+        </p>
+        
+        <div class="results-grid">
+            <div class="metrics-card">
+                <h3 style="margin-bottom: 24px; color: white;">Métricas de Evaluación</h3>
+                
+                <div class="metric-row">
+                    <span class="metric-name">R-squared (R²)</span>
+                    <span class="metric-val highlight">~0.90+</span>
+                </div>
+                
+                <div class="metric-row">
+                    <span class="metric-name">RMSE (Error Cuadrático Medio)</span>
+                    <span class="metric-val">34.5731</span>
+                </div>
+                
+                <div class="metric-row">
+                    <span class="metric-name">MSE (Error Medio Cuadrático)</span>
+                    <span class="metric-val">1195.30</span>
+                </div>
+
+                <p class="metric-footer">Resultados validados en Test Set (20% del dataset)</p>
+            </div>
+
+            <div class="findings-content" style="padding-left: 20px;">
+                <h3>Análisis de Datos</h3>
+                <ul>
+                    <li style="margin-bottom: 20px;">
+                        <strong>Precisión Alta:</strong> Lograr un R² superior al 0.90 confirma que la relación entre el consumo de 
+                        combustible/motor y las emisiones es fuertemente lineal y predecible. Esto significa que, en la mayoría de los casos, 
+                        el modelo acierta casi por completo en sus estimaciones.
+                    </li>
+                    <li style="margin-bottom: 20px;">
+                        <strong>Confiabilidad:</strong> El error RMSE de 34.57 es bajo en relación a la escala de emisiones totales, 
+                        lo que hace al modelo confiable para estimaciones preliminares.
+                    </li>
+                    <li style="margin-bottom: 20px;">
+                        <strong>Escalabilidad:</strong> Gracias a la estructura del pipeline, este modelo puede re-entrenarse
+                         fácilmente con nuevos datos anuales sin reescribir código.
+                    </li>
+                    
+                </ul>   
+               
+            </div>  
+            
+            
+        </div>
+            <p class="section-resutados">
+                Con un error marginal de solo 2.42 g/km (RMSE), la empresa puede auditar la compra de vehículos ligeros y medianos con confianza matemática, reduciendo el riesgo de multas ambientales.
+            </p>      
+    </section>
+
+    <section class="project-section container bg-alt">
+        <h2>Arquitectura del Código</h2>
+        <p class="section-intro">
+            El valor central de este repositorio no es solo el modelo, sino la <strong>ingeniería de software</strong> aplicada. Estructura modular lista para producción.
+        </p>
+        
+        <div class="structure-grid">
+            <div class="struct-item">
+                <i class="fas fa-folder-tree"></i>
+                <div>
+                    <h4>src/</h4>
+                    <p>Lógica modular separada: <code>data_clean.py</code> (limpieza), <code>data_loader.py</code> (carga de datos), <code>data_processing.py</code> (procesamiento) y <code>model.py</code>.</p>
+                </div>
+            </div>
+            <div class="struct-item">
+                <i class="fas fa-database"></i>
+                <div>
+                    <h4>data/</h4>
+                    <p>Pipeline de datos organizado: <code>raw</code> (crudos) &rarr; <code>processed</code> (listos para modelado).</p>
+                </div>
+            </div>
+            <div class="struct-item">
+                <i class="fas fa-file-code"></i>
+                <div>
+                    <h4>notebooks/</h4>
+                    <p>Sandbox para EDA (Análisis Exploratorio) y experimentación rápida antes de pasar a producción.</p>
+                </div>
+            </div>
+            <div class="struct-item">
+                <i class="fas fa-cube"></i>
+                <div>
+                    <h4>models/</h4>
+                    <p>Serialización de modelos (<code>.jolib</code>) para reutilización inmediata sin reentrenamiento.</p>
+                </div>
+            </div>
+        </div>
+        <div class="imagen-pipeline-container">
+            <img src="/img/PIPELINE_MODULAR.png" alt="Pipeline Estructurado">
+        </div>
+    </section>
+
+    <section class="footer-cta container">
+        <div class="cta-box">
+            <div class="cta-content">
+                <h3>Explora el código fuente</h3>
+                <p>Revisa la implementación detallada, el README y la estructura profesional en GitHub.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://github.com/MTEmmanue/Proyecto_Regresi-n_Lineal_Pipeline" target="_blank" class="btn-primary">Ir al Repositorio <i class="fab fa-github"></i></a>
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Emmanuel Tapia · 2026</span>
+            <div class="footer-nav">
+                <a href="../index.html#inicio">Inicio</a>
+                <a href="../index.html#sobre-mi">Sobre mí</a>
+                <a href="../index.html#proyectos">Proyectos</a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+</body>
+</html>

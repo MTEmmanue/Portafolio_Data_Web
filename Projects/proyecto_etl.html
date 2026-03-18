@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETL UBI-Games - Emmanuel Tapia</title>
+    <link rel="stylesheet" href="/Styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo" style="display: flex; align-items: center;">
+            <i class="fas fa-circle-nodes data-navbar-icon"></i>
+            
+            <span style="font-weight: 700; font-size: 1.3rem; color: #fff;">Em.Data</span>
+        </div>
+
+        <div class="nav-actions">
+            <ul class="nav-links">
+                <li><a href="../index.html#inicio">Inicio</a></li>
+                <li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+                <li><a href="../index.html#proyectos" class="active">Proyectos</a></li>
+            </ul>
+
+            <a href="https://www.linkedin.com/in/emmanuel-mtapia/" target="_blank" class="icon-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/MTEmmanue" target="_blank" class="icon-link">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:emmanuel.tp.2024@gmail.com" class="icon-link">
+                <i class="far fa-envelope"></i>
+            </a>
+            <a href="../index.html#proyectos" class="btn-primary">
+                Ver proyectos 
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </nav>
+
+
+    <section class="project-hero container">
+        <div class="project-hero-content">
+            <a href="../index.html#proyectos" class="back-link"><i class="fas fa-arrow-left"></i> Volver al portafolio</a>
+            
+            <h1>Proyecto End-to-End: ETL con Python → SQL Server</h1>
+            
+            <p class="project-subtitle">
+                Proyecto centrado en <strong>UBI-Games</strong>, plataforma con datos simulados de Ubisoft. Transformación de datos crudos en Golden Records para la toma de decisiones estratégicas.
+            </p>
+
+            <div class="tech-stack">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">SQL Server</span>
+                <span class="tag">ETL Pipeline</span>
+                <span class="tag">Data Modeling</span>
+            </div>
+            
+            <div class="hero-buttons" style="margin-top: 40px;">
+                <a href="https://github.com/MTEmmanue/ETL_Python-SQL" target="_blank" class="btn-primary">
+                    Ver Repositorio <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+        <div class="project-hero-image">
+            <img src="/img/Proyecto_ETL_Python_SQL.png" alt="Arquitectura ETL UBI-Games">
+        </div>
+    </section>
+
+    
+    <section class="project-section container">
+        <h2>Necesidad del Negocio y Objetivo</h2>
+        <p class="section-intro">
+            La organización busca proyecciones basadas en datos con un objetivo crítico: <strong>atraer nuevos inversores y consolidar alianzas estratégicas.</strong>
+        </p>
+
+        <div class="results-grid">
+            <div class="metrics-card">
+                <h3 style="margin-bottom: 24px; color: white;">El Desafío Principal</h3>
+                <p style="color: #ccc; line-height: 1.6; margin-bottom: 20px;">
+                    La dirección de la empresa carece de conocimientos técnicos, por lo que se requiere transformar datos crudos en un análisis visual, claro y estratégico.
+                </p>
+                <p style="color: white; line-height: 1.6;">
+                    No basta con mostrar tablas; se deben responder preguntas sobre el comportamiento del usuario, la rentabilidad de los juegos y la actividad en la plataforma para facilitar la toma de decisiones.
+                </p>
+            </div>
+
+            <div class="findings-content" style="padding-left: 20px;">
+                <h3>Ecosistema de Datos (5 Dimensiones)</h3>
+                <p style="margin-bottom: 15px;">El proyecto utiliza registros simulados basados en títulos reales de Ubisoft, modelando la interacción completa:</p>
+                <ul>
+                    <li style="margin-bottom: 10px;"><strong>Catálogo:</strong> Datos de los juegos, categorías y fechas de lanzamiento.</li>
+                    <li style="margin-bottom: 10px;"><strong>Usuarios:</strong> Información demográfica (país, registro).</li>
+                    <li style="margin-bottom: 10px;"><strong>Comportamiento:</strong> Registros detallados de sesiones (inicio/fin).</li>
+                    <li style="margin-bottom: 10px;"><strong>Feedback:</strong> Calificaciones dadas por usuarios.</li>
+                    <li style="margin-bottom: 10px;"><strong>Monetización:</strong> Transacciones económicas en la plataforma.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="project-section container bg-alt">
+        <div class="two-column-grid challenge-layout">
+            
+            <div class="text-content">
+                <h2>La Importancia del ETL en Python</h2>
+                
+                <p>
+                    El proceso ETL en Python fue diseñado para <strong>blindar la calidad del dato</strong> ante los errores encontrados en los archivos crudos. Este flujo asegura que los datos que llegan a Power BI y SQL sean "Golden Records".
+                </p>
+                
+                <div style="margin-top: 25px;">
+                    <div style="margin-bottom: 15px;">
+                        <strong style="color: white; display: block;">1. Integridad Referencial</strong>
+                        <span style="color: #bbb; font-size: 0.95rem;">Se eliminaron registros huérfanos (sesiones sin usuario) que corromperían el análisis de retención.</span>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong style="color: white; display: block;">2. Lógica Temporal</strong>
+                        <span style="color: #bbb; font-size: 0.95rem;">Corrección de formatos de fecha para permitir cálculos de tiempo precisos (duración de sesiones).</span>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong style="color: white; display: block;">3. Calidad Financiera</strong>
+                        <span style="color: #bbb; font-size: 0.95rem;">Eliminación de transacciones nulas y duplicados para asegurar KPIs de ingresos matemáticamente correctos.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="imagen-pipeline-container" style="margin-top: 0;">
+                <img src="/img/ETL_Python.png" alt="Script de Limpieza en Python Pandas" style="border: 1px solid #444; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border-radius: 12px;">
+                <p style="text-align: center; color: #777; font-size: 0.8rem; margin-top: 10px;">
+                    <i class="fab fa-python"></i> Snippet del proceso de limpieza con Pandas
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="project-section container">
+        <h2>Modelado de Datos (SQL Server)</h2>
+        <p class="section-intro">
+            Transformación de archivos planos desconectados en un modelo relacional robusto.
+        </p>
+
+        <div class="imagen-pipeline-container">
+            <img src="/img/Diagrama_Videojuegos.png" alt="Diagrama Entidad Relación UBI-Games">
+            <p style="text-align: center; color: #777; font-size: 0.8rem; margin-top: 10px;">
+                <i class="fas fa-database"></i> Esquema Relacional Optimizado
+            </p>
+        </div>
+    </section>
+
+    <section class="project-section container bg-alt">
+    <div class="two-column-grid challenge-layout">
+        
+        <div class="text-content">
+            <h2 style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px;">Justificación del Análisis SQL</h2>
+            
+            <p style="color: #ccc; line-height: 1.6; margin-bottom: 20px;">
+                Las consultas SQL no son aleatorias; responden directamente a las métricas sugeridas por la gerencia para la atracción de inversores.
+            </p>
+            <p style="color: #ccc; line-height: 1.6;">
+                Cruzamos las dimensiones de calidad, ventas y tiempo para generar hipótesis sobre "baja puntuación" y detectar éxitos comerciales que podrían ser fracasos en calidad.
+            </p>
+        </div>
+
+        <div class="box-card kpi-card">
+            <h4 class="card-title-small">
+                <i class="fas fa-chart-line"></i> KPIS DE NEGOCIO
+            </h4>
+            
+            <div class="kpi-list">
+                
+                <div class="kpi-item">
+                    <h5 class="kpi-name">Rentabilidad por Categoría</h5>
+                    <span class="kpi-badge badge-green">Motor Financiero</span>
+                    <p class="kpi-desc">Permite saber qué género financia a la compañía.</p>
+                </div>
+
+                <div class="kpi-item">
+                    <h5 class="kpi-name">Engagement (Horas Jugadas)</h5>
+                    <span class="kpi-badge badge-yellow">Hardcore Users</span>
+                    <p class="kpi-desc">Segmentación de clientes VIP por actividad.</p>
+                </div>
+
+                <div class="kpi-item">
+                    <h5 class="kpi-name">ARPU por País</h5>
+                    <span class="kpi-subtitle">Geolocalización</span>
+                    <p class="kpi-desc">Ingreso promedio por usuario activo cruzado por zona.</p>
+                </div>
+
+                <div class="kpi-item">
+                    <h5 class="kpi-name">Horas Pico (Infraestructura)</h5>
+                    <span class="kpi-subtitle">Operativo</span>
+                    <p class="kpi-desc">Días y horarios de mayor actividad para optimización.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+    
+
+    <section class="project-section container">
+        <h2>Estructura del Repositorio</h2>
+        <p class="section-intro">
+            Organización modular lista para producción y escalabilidad.
+        </p>
+        
+        <div class="structure-grid">
+            <div class="struct-item">
+                <i class="fab fa-python"></i>
+                <div>
+                    <h4>Python/ETL.py</h4>
+                    <p>Script principal de orquestación. Extrae, Transforma y Carga (Load) hacia SQL Server.</p>
+                </div>
+            </div>
+            <div class="struct-item">
+                <i class="fas fa-database"></i>
+                <div>
+                    <h4>DDL_JuegosDB.sql</h4>
+                    <p>Definición del esquema, creación de tablas, llaves primarias y foráneas.</p>
+                </div>
+            </div>
+            <div class="struct-item">
+                <i class="fas fa-file-csv"></i>
+                <div>
+                    <h4>Datos/Raw</h4>
+                    <p>Ingesta de múltiples fuentes CSV simuladas (Catalog, User, Stream, etc.).</p>
+                </div>
+            </div>
+            <div class="struct-item">
+                <i class="fas fa-search-dollar"></i>
+                <div>
+                    <h4>Preguntas_Analisis.sql</h4>
+                    <p>Queries de negocio optimizadas para responder las preguntas de la gerencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="footer-cta container">
+        <div class="cta-box">
+            <div class="cta-content">
+                <h3>Explora el código fuente</h3>
+                <p>Revisa el script ETL completo y las queries de análisis en el repositorio.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://github.com/MTEmmanue/ETL_Python-SQL" target="_blank" class="btn-primary">Ir al Repositorio <i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Emmanuel Tapia · 2026</span>
+            <div class="footer-nav">
+                <a href="../index.html#inicio">Inicio</a>
+                <a href="../index.html#sobre-mi">Sobre mí</a>
+                <a href="../index.html#proyectos">Proyectos</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

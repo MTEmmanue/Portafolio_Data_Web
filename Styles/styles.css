@@ -1,0 +1,1371 @@
+/* --- Variables & Reset --- */
+:root {
+    --bg-dark: #050505;
+    --bg-card: #0F0F0F;
+    --bg-card-hover: #141414;
+    --text-white: #ffffff;
+    --text-gray: #a1a1aa;
+    --accent: #00E599; /* Verde Neón */
+    --accent-hover: #00c282;
+    --border-color: #27272a;
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.2s; }
+ul { list-style: none; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- ESTILOS NUEVOS PARA EL LOGO --- */
+
+.brand-name {
+    font-weight: 700;
+    font-size: 1.3rem; /* Ajusta según necesites */
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.brand-extension {
+    /* Esto es la clave: fuente de código y color de acento */
+    font-family: 'Fira Code', 'Roboto Mono', monospace; /* Usa tu fuente mono preferida */
+    color: var(--accent-color, #4ade80); /* Tu color verde */
+    font-weight: 400; /* Un poco más ligero que el nombre */
+}
+
+.tech-icon {
+    font-family: 'Fira Code', 'Roboto Mono', monospace; /* Fuente de código */
+    color: var(--accent-color, #4ade80); /* Tu color verde */
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin-right: 8px; /* Espacio entre el icono y el nombre */
+    letter-spacing: -2px; /* Junta un poco el > y el _ */
+}
+
+/* --- ESTILO PARA EL NUEVO ICONO DE DATA EN NAVBAR --- */
+.data-navbar-icon {
+    color: var(--accent-color, #4ade80); /* Tu color verde exacto */
+    font-size: 1.4rem; /* Un poco más grande para que destaque */
+    margin-right: 12px; /* Espacio entre el icono y "Em.Data" */
+    
+    /* Un brillo sutil para que se vea "tecnológico" */
+    filter: drop-shadow(0 0 5px rgba(74, 222, 128, 0.4));
+    
+    /* Alineación fina */
+    display: flex;
+    align-items: center;
+}
+
+/* Asegúrate de tener los estilos del nombre también */
+.brand-name { font-weight: 700; font-size: 1.3rem; color: #fff; }
+.brand-extension { font-family: monospace; color: var(--accent-color, #4ade80); font-weight: 400; }
+
+/* Opcional: Un pequeño efecto terminal al icono cuadrado existente */
+.logo-icon {
+    /* Si quieres que se vea más "tech", añade un borde sutil brillante */
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.2); /* Resplandor verde suave */
+    border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* --- Botones --- */
+.btn-primary {
+    background-color: var(--accent);
+    color: #000;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 99px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-5px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-white);
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 99px;
+    border: 1px solid var(--border-color);
+}
+.btn-secondary:hover { background-color: var(--border-color); }
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-white);
+    padding: 10px 20px;
+    border-radius: 99px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+.btn-outline:hover {
+    transform: translateY(-5px);
+    background-color: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+}
+
+/* --- Navbar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(5,5,5,0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    background: #1a1a1a;
+    color: var(--accent);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--text-gray);
+  font-size: 1.3rem;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text-white);
+}
+
+.nav-links a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  border-radius: 2px;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    left: 50%;
+  }
+  to {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.icon-link {
+  font-size: 1.2rem;
+  color: var(--text-gray);
+}
+
+.icon-link:hover {
+  color: var(--text-white);
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    align-items: start;
+}
+
+.location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    
+    
+    padding: 6px 12px;
+    border-radius: 99px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.typing-text {
+    color: #f8f8f8;
+    font-weight: 600;
+    position: relative;
+}
+
+.typing-text::after {
+    content: "|";
+    position: absolute;
+    right: -8px;
+    animation: blink 0.7s infinite;
+}
+
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+    margin-bottom: 32px;
+    max-width: 600px;
+    
+}
+/* 1. Aseguramos que el contenedor H2 tenga estilos definidos */
+.hero-content h2 {
+    font-size: 2rem; /* Ajusta este tamaño al que prefieras */
+    min-height: 1.2em; /* Reserva el espacio vertical de al menos una línea */
+    margin-bottom: 20px; /* Separa el subtítulo para que no brinque */
+    line-height: 1.2; /* Define una altura de línea fija */
+}
+
+/* 2. TRUCO DE MAGIA: Agregamos un carácter invisible al span */
+/* Esto obliga al navegador a mantener la altura de la línea 
+   incluso cuando el JavaScript borra todo el texto */
+.typing-text::before {
+    content: "\200b"; /* Carácter de "espacio de ancho cero" */
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.tag {
+    background: #121212;
+    border: 1px solid var(--border-color);
+    padding: 6px 14px;
+    border-radius: 99px;
+    font-size: 0.9rem;
+    color: var(--text-white);
+    font-weight: 500;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 60px;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.metric-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+}
+
+.metric-label { display: block; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 4px; }
+.metric-value { font-size: 1rem; font-weight: 600; color: var(--text-white); }
+
+.advice-text { font-size: 0.85rem; color: #555; }
+
+/* --- Estilos para Badges de Tecnología (Stack) --- */
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap; /* Permite que bajen si no caben en pantallas chicas */
+    gap: 16px; /* Espacio entre cada tarjeta */
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.tech-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espacio entre el icono y el texto */
+    
+    /* Estilo de la tarjeta */
+    background-color: rgba(255, 255, 255, 0.03); /* Fondo oscuro sutil */
+    border: 1px solid #333; /* Borde gris oscuro elegante */
+    border-radius: 12px; /* Bordes redondeados (estilo moderno) */
+    padding: 10px 20px; /* Relleno interno */
+    
+    /* Texto */
+    color: var(--text-white);
+    font-size: 0.95rem;
+    font-weight: 500;
+    
+    /* Animación */
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* Tamaño de los iconos SVG */
+.tech-badge img {
+    height: 24px; /* Ajusta este tamaño según tus iconos */
+    width: auto;
+    display: block;
+}
+
+/* Efecto Hover (Al pasar el mouse) */
+.tech-badge:hover {
+    border-color: var(--accent); /* Borde Verde Neón */
+    background-color: rgba(0, 229, 153, 0.05); /* Fondo verde muy sutil */
+    transform: translateY(-3px); /* Pequeña elevación */
+    box-shadow: 0 5px 15px rgba(0, 229, 153, 0.1); /* Sombra suave verde */
+}
+
+/* --- Profile Card (Right Side) --- */
+.profile-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 24px;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.avatar-container { display: flex; gap: 16px; align-items: center; }
+.avatar { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; }
+.profile-info h3 { font-size: 1.1rem; }
+.profile-info p { color: var(--text-gray); font-size: 0.9rem; }
+.profile-icons { display: flex; gap: 12px; font-size: 1.2rem; color: var(--text-white); }
+
+.card-section {
+    background: #151515;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.card-section h4 {
+    color: var(--text-gray);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.card-section h4 i { color: var(--accent); }
+.sub-text { font-size: 0.8rem; color: #666; margin-top: 4px; }
+
+.mini-metrics { display: flex; gap: 16px; }
+.mini-metric { display: flex; flex-direction: column; }
+.mini-metric span { font-size: 0.75rem; color: var(--text-gray); }
+
+/* --- Estilos para la foto en la sección "Sobre mí" --- */
+
+/* Convertimos la tarjeta de contenido en una rejilla interna */
+.about-photo-layout {
+    display: grid;
+    /* Define el ancho fijo para la columna de la foto (240px) y el resto para el texto */
+    grid-template-columns: 240px 1fr;
+    gap: 32px; /* Espacio entre la foto y el texto */
+    align-items: start;
+}
+
+/* Contenedor rectangular vertical para la foto */
+.about-portrait-container {
+    width: 100%;
+    /* Altura fija para forzar el formato vertical rectangular */
+    height: 380px; 
+    border-radius: var(--radius-md); /* Bordes redondeados consistentes */
+    overflow: hidden; /* Asegura que la imagen respete los bordes */
+    border: 1px solid var(--border-color);
+    background-color: rgba(255,255,255,0.02); /* Fondo sutil por si la imagen tarda en cargar */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra suave */
+}
+
+/* Estilo de la imagen misma */
+.about-portrait-img {
+    width: 100%;
+    height: 100%;
+    /* 'cover' es CLAVE: llena el rectángulo sin estirar la imagen, recortando lo necesario */
+    object-fit: cover; 
+    /* Enfoca la parte superior central (ideal para retratos) */
+    object-position: center top;
+}
+
+/* Ajuste para la envoltura del texto */
+.about-text-wrapper p {
+    /* Aseguramos que el margen inferior de los párrafos se mantenga */
+    margin-bottom: 24px;
+}
+
+/* --- Responsive: Adaptación para móviles y tablets pequeñas --- */
+@media (max-width: 900px) {
+    /* En pantallas más chicas, cambiamos a una sola columna */
+    .about-photo-layout {
+        grid-template-columns: 1fr; /* Pila vertical */
+        gap: 24px;
+    }
+
+    /* Ajustamos el tamaño de la foto en móvil para que no sea enorme */
+    .about-portrait-container {
+        height: 320px; /* Un poco menos alta */
+        max-width: 280px; /* Limitamos el ancho */
+        margin: 0 auto; /* Centramos la imagen horizontalmente */
+    }
+}
+
+/* --- General Section Styles --- */
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #111;
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+section h2 { font-size: 2rem; margin-bottom: 8px; }
+.section-desc { color: var(--text-gray); margin-bottom: 40px; max-width: 600px; }
+
+/* --- About Section --- */
+.about-section, .experience-section { padding: 60px 24px; }
+.about-grid, .experience-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    
+}
+
+.box-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+}
+.box-card p { color: var(--text-gray); margin-bottom: 24px; }
+
+.about-subgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+}
+.sub-box h4 { color: var(--text-white); margin-bottom: 8px; font-size: 0.95rem; }
+
+.sidebar-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+.sidebar-box h4 { margin-bottom: 16px; color: var(--text-gray); font-size: 0.9rem; }
+
+.stack-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.stack-tags span {
+    background: #1a1a1a; border: 1px solid var(--border-color);
+    padding: 4px 10px; border-radius: 6px; font-size: 0.85rem;
+}
+
+/* --- NUEVOS ESTILOS PARA LINKS TIPO "PILL" (Referencia Imagen 7) --- */
+
+/* Contenedor principal de los links */
+.links-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Mayor separación entre los botones */
+}
+
+/* Estilo del botón "Píldora" */
+.link-pill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px; /* Padding más amplio para la forma de píldora */
+    background-color: transparent; /* Fondo transparente */
+    border: 1px solid #333; /* Borde sutil gris oscuro */
+    border-radius: 99px; /* Bordes completamente redondeados */
+    font-size: 1rem;
+    color: var(--text-white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto Hover en la píldora completa */
+.link-pill:hover {
+    border-color: var(--accent); /* El borde se vuelve del color de acento */
+    transform: translateY(-2px); /* Pequeña elevación */
+    background-color: rgba(0, 229, 153, 0.05); /* (Opcional) Fondo verde muy sutil */
+}
+
+/* Contenedor izquierdo (Icono + Texto) */
+.link-content-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 500;
+}
+
+/* Estilo de los iconos de marca (LinkedIn/GitHub) */
+.link-icon-brand {
+    font-size: 1.3rem;
+    color: var(--accent); /* Color verde neón para los iconos */
+}
+
+/* Estilo de la flecha a la derecha */
+.link-arrow {
+    font-size: 0.9rem;
+    color: #555; /* Color gris apagado por defecto */
+    /* Rotamos la flecha 45 grados negativos para que apunte arriba-derecha */
+    transform: rotate(-45deg); 
+    transition: all 0.3s ease;
+}
+
+/* Efecto Hover específico en la flecha cuando pasas el mouse sobre el botón */
+.link-pill:hover .link-arrow {
+    color: var(--text-white); /* La flecha se ilumina a blanco */
+    /* Pequeño movimiento hacia la esquina */
+    transform: rotate(-45deg) translate(2px, -2px);
+}
+
+/* --- Projects Section --- */
+.projects-section { padding: 60px 24px; }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s;
+}
+.project-card:hover { transform: translateY(-5px); border-color: #444; }
+
+.project-header { display: flex; justify-content: space-between; margin-bottom: 16px; }
+.project-header h3 { font-size: 1.1rem; }
+.project-header i { color: var(--text-gray); }
+
+.project-card p { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 24px; flex-grow: 1; }
+
+.project-tags { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+.project-tags span {
+    font-size: 0.75rem; background: #1a1a1a; padding: 4px 8px; border-radius: 4px; border: 1px solid #333;
+}
+
+.project-link {
+    color: var(--accent); font-size: 0.9rem; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 6px;
+}
+
+/* --- Experience Section --- */
+.exp-header {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;
+}
+.pill {
+    font-size: 0.8rem; background: #222; padding: 4px 10px; border-radius: 99px; color: var(--text-gray);
+}
+.exp-list { margin-left: 18px; color: var(--text-gray); margin-bottom: 32px; }
+.exp-list li { margin-bottom: 8px; }
+
+.exp-metrics { display: flex; gap: 16px; }
+.exp-metric-box {
+    border: 1px solid var(--border-color); padding: 12px 20px; border-radius: 12px; min-width: 120px;
+}
+.exp-metric-box span { display: block; font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+
+.specs-list li {
+    display: flex; gap: 10px; align-items: center; margin-bottom: 12px; font-size: 0.9rem;
+}
+.specs-list i { color: var(--accent); }
+
+/* --- Footer CTA --- */
+.footer-cta { margin-top: 80px; margin-bottom: 40px; }
+.cta-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.cta-content h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.cta-content p { color: var(--text-gray); }
+
+.cta-buttons { display: flex; gap: 16px; }
+
+.footer-bottom {
+    display: flex; justify-content: space-between; color: #444; font-size: 0.85rem; border-top: 1px solid #222; padding-top: 24px;
+}
+.footer-nav { display: flex; gap: 24px; }
+.footer-nav a:hover { color: var(--text-white); }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-section, .about-grid, .experience-grid { grid-template-columns: 1fr; }
+    .navbar { padding: 20px; }
+    .nav-links { display: none; } /* Ocultar menú en móvil para simplificar demo */
+    .hero-content h1 { font-size: 2.5rem; }
+    .cta-box { flex-direction: column; text-align: left; gap: 24px; align-items: flex-start; }
+}
+
+
+/* ==========================================================================
+   ESTILOS COMPLETOS PARA PÁGINAS DE PROYECTO (proyecto-regresion.html)
+   ========================================================================== */
+
+/* --- Configuración General de Secciones del Proyecto --- */
+.project-section {
+    padding: 100px 24px; /* Mucho espacio arriba y abajo (aire) */
+    position: relative;
+}
+
+/* Fondo alternativo para separar visualmente secciones */
+.bg-alt {
+    background-color: #0A0A0A; /* Ligeramente más claro que el fondo negro */
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-intro {
+    font-size: 1.15rem;
+    color: var(--text-gray);
+    margin-bottom: 60px; /* Separación grande entre la intro y el contenido */
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+.section-resutados {
+    font-size: 1.15rem;
+    color: var(--text-gray);
+    padding-top: 50px;
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+/* Títulos de sección */
+.project-section h2 {
+    font-size: 2.5rem;
+    margin-top: -70px;
+    margin-bottom: 32px;
+    color: var(--text-white);
+}
+
+/* --- Hero Section (Encabezado del Proyecto) --- */
+.project-hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Columna texto más ancha */
+    gap: 80px; /* Separación entre texto e imagen */
+    padding-top: 80px;
+    padding-bottom: 1px;
+    align-items: center;
+}
+
+/* Botón "Volver" */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.back-link:hover { color: var(--accent); }
+
+/* TÍTULO GRANDE e Impactante */
+.project-hero h1 {
+    font-size: 4rem; /* Tamaño muy grande */
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-white);
+    margin-bottom: 24px;
+    letter-spacing: -1.5px;
+}
+
+.project-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+.project-hero-image img {
+    width: 130%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5); /* Sombra elegante */
+}
+
+/* --- Grids Generales (Dos Columnas) --- */
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Métricas izquierda, Texto derecha */
+    gap: 60px; /* Separación generosa */
+    align-items: flex-start;
+}
+
+/* Texto explicativo al lado de las métricas */
+.findings-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    color: var(--text-white);
+}
+
+.findings-content ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.findings-content li {
+    margin-bottom: 24px; /* Separación entre bullets */
+    color: #ccc;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 24px;
+}
+
+.findings-content li::before {
+    content: '→'; 
+    color: var(--accent); 
+    font-weight: bold;
+    position: absolute; 
+    left: 0; top: 0;
+}
+
+.findings-content li strong {
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+/* --- TARJETA DE MÉTRICAS (Ajustada y Limpia) --- */
+.metrics-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 40px; /* Relleno interno amplio */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.metrics-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+    color: var(--text-white);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 16px;
+}
+
+.metric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0; /* Espacio vertical entre filas */
+    border-bottom: 1px solid rgba(255,255,255,0.05); /* Línea divisoria muy sutil */
+}
+.metric-row:last-of-type { border-bottom: none; }
+
+.metric-name {
+    color: var(--text-gray);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.metric-val {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-white);
+    font-family: monospace; /* Fuente tipo código para números */
+}
+
+/* Clase para resaltar el R2 en verde */
+.metric-val.highlight {
+    color: var(--accent); /* Verde Neón */
+    font-size: 1.6rem; /* Más grande que el resto */
+}
+
+.metric-footer {
+    margin-top: 32px;
+    font-size: 0.85rem;
+    color: #555;
+    text-align: center;
+    font-style: italic;
+}
+
+/* --- NUEVA SECCIÓN: Valor de Negocio (Cards) --- */
+.business-value-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.biz-card {
+    background: linear-gradient(145deg, #111, #0a0a0a); /* Degradado sutil */
+    border: 1px solid #222;
+    border-left: 3px solid var(--accent); /* Borde verde a la izquierda */
+    border-radius: 12px;
+    padding: 32px;
+    transition: transform 0.3s ease;
+}
+
+.biz-card:hover {
+    transform: translateY(-5px); /* Pequeña animación al pasar mouse */
+    border-color: #333;
+}
+
+.biz-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-white);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.biz-card h3 i { color: var(--accent); }
+
+.biz-card p {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Grid de Estructura de Carpetas (src, data, models) --- */
+.structure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.struct-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.struct-item:hover {
+    transform: translateY(-5px);
+    border-color: #444;
+}
+
+.struct-item i {
+    font-size: 1.5rem;
+    color: var(--accent); /* Icono carpeta verde */
+    margin-top: 4px;
+}
+
+.struct-item h4 {
+    color: var(--text-white);
+    margin-bottom: 8px;
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.struct-item p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Responsive (Móvil) --- */
+@media (max-width: 900px) {
+    .project-hero {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        text-align: left;
+        gap: 40px;
+        padding-top: 40px;
+    }
+    
+    .project-hero h1 { font-size: 2.8rem; }
+    
+    .results-grid {
+        grid-template-columns: 1fr; /* Una columna para resultados */
+        gap: 40px;
+    }
+    
+    .project-section { padding: 60px 20px; }
+}
+
+project-section container {
+    max-width: 1000px;
+    margin: 0 auto;
+   
+}
+
+/* --- Estilos para el contenedor de la imagen del Pipeline --- */
+.imagen-pipeline-container {
+    margin-top: 60px;       /* Espacio arriba */
+    margin-bottom: 1px;    /* Espacio abajo */
+    text-align: center;     /* Centra la imagen horizontalmente */
+    width: 100%;            /* Ocupa todo el ancho disponible de la sección */
+}
+
+/* --- Estilos para la imagen misma --- */
+.imagen-pipeline-container img {
+    /* LA REGLA DE ORO: Evita que se salga del contenedor */
+    max-width: 100%;
+    height: auto;           /* Mantiene la proporción correcta */
+    
+    /* Opcional: Estilos para que combine con el resto del diseño */
+    border-radius: 12px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.cta-box {
+    margin-bottom: 120px;
+}
+
+/* --- ESTILOS PARA TARJETAS DE VARIABLES / IMPACTO --- */
+
+/* 1. Layout general de 2 columnas para estas secciones */
+.challenge-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Mitad texto, mitad tarjeta */
+    gap: 40px;
+    align-items: center; /* Centra verticalmente */
+}
+
+/* 2. La tarjeta oscura contenedora */
+.variables-card {
+    background: #0f0f0f; /* Fondo casi negro */
+    border: 1px solid #333; /* Borde sutil */
+    padding: 30px;
+    border-radius: 12px;
+    height: fit-content; /* Se ajusta al contenido */
+}
+
+.card-title {
+    color: #888;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+/* 3. La lista y las filas individuales */
+.variables-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre cada variable */
+}
+
+.var-row {
+    display: flex;
+    align-items: center; /* ALINEACIÓN CLAVE: Pone el badge junto al texto */
+    gap: 16px; /* Espacio entre el badge y el texto */
+}
+
+/* 4. Contenedor del Badge (evita que se aplaste) */
+.badge-container {
+    flex-shrink: 0; 
+    width: 130px; /* Ancho fijo para que todos los badges se alineen igual */
+}
+
+/* 5. El diseño del Badge (la "pastilla" de color) */
+.var-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid #444;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ccc;
+    width: 100%; /* Llena el contenedor */
+}
+
+/* 6. El texto descriptivo de la derecha */
+.var-text {
+    margin: 0px;
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+.var-text strong {
+    color: white;
+    display: block; /* Pone el nombre de la variable arriba */
+    margin-bottom: -15px;
+}
+
+.unit {
+    color: #777; /* Color más apagado para la descripción pequeña */
+    font-size: 0.85rem;
+}
+
+/* --- RESPONSIVE (Móvil) --- */
+@media (max-width: 900px) {
+    .challenge-layout {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+    
+    .badge-container {
+        width: auto; /* En móvil dejamos que el ancho sea libre */
+        min-width: 100px;
+    }
+}
+
+/* --- Corrección Definitiva para Desbordamiento de Texto --- */
+
+/* 1. Le damos permiso al contenedor del texto para encogerse dentro del Flexbox */
+.struct-item > div {
+    min-width: 0; /* TRUCO CLAVE: Permite que el flex-child se encoja y active el word-wrap */
+    flex: 1; /* Ocupa el espacio restante */
+}
+
+/* 2. Forzamos al título a romperse si es necesario */
+.struct-item h4 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word; /* Rompe la palabra si es demasiado larga para una línea */
+    hyphens: auto;
+    
+    /* Opcional: Reduce un poco la fuente si el path es muy largo */
+    font-size: 1.12rem; 
+    line-height: 1.2;
+}
+
+/* --- ESTILOS ESPECÍFICOS: JUSTIFICACIÓN SQL (Referencia Visual) --- */
+
+.kpi-card {
+    background: #0a0a0a; /* Fondo muy oscuro */
+    border: 1px solid #222;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.card-title-small {
+    color: #666;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+}
+
+.kpi-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.kpi-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.kpi-name {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+/* Estilo Base para los Badges (Cajas con borde) */
+.kpi-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    background: transparent; /* Fondo transparente como en la imagen */
+}
+
+/* Modificador Verde (Vaca Lechera) */
+.badge-green {
+    color: #4ade80;
+    border: 1px solid #4ade80;
+}
+
+/* Modificador Amarillo (Hardcore Users) */
+.badge-yellow {
+    color: #facc15;
+    border: 1px solid #facc15;
+}
+
+/* Estilo para los subtítulos simples (Geolocalización/Operativo) */
+.kpi-subtitle {
+    color: #fff; /* Texto blanco simple */
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+
+.kpi-desc {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.stack-tags span {
+    transition: border-color 0.3s ease;
+}
+
+.stack-tags span:hover {
+    border-color: #ffffff;
+}
+
+.card-section {
+    transition: transform 0.3s ease;
+}
+
+.card-section:hover {
+    transform: scale(1.03); /* Ajusta este valor (ej. 1.05) si lo quieres más grande */
+}
+
+
+/* =======================================================================
+   EFECTOS DE APARICIÓN (FADE-IN)
+   ======================================================================= */
+
+/* 1. Animación para la sección Inicio (Aparece sola al cargar la página) */
+@keyframes fadeInLoad {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#inicio {
+    animation: fadeInLoad 1.2s ease-out forwards;
+}
+
+/* 2. Animación para el resto de secciones (Aparecen al bajar el scroll) */
+@keyframes revealOnScroll {
+    0% {
+        opacity: 0;
+        transform: translateY(80px); /* Empieza un poco más abajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Vuelve a su posición original */
+    }
+}
+
+/* Clase para animar secciones cuando entran en vista */
+.section-reveal {
+    opacity: 0;
+    transform: translateY(80px);
+}
+
+.section-reveal.active {
+    animation: revealOnScroll 0.8s ease-out forwards;
+}
+
+/* Efecto adicional: Animar elementos dentro de secciones para efecto escalonado */
+.section-reveal.active .box-card,
+.section-reveal.active .project-card,
+.section-reveal.active .skill-card,
+.section-reveal.active .profile-card {
+    opacity: 0;
+    animation: revealOnScroll 0.8s ease-out forwards;
+}
+
+.section-reveal.active .box-card:nth-child(1) { animation-delay: 0.1s; }
+.section-reveal.active .box-card:nth-child(2) { animation-delay: 0.2s; }
+.section-reveal.active .box-card:nth-child(3) { animation-delay: 0.3s; }
+
+.section-reveal.active .project-card:nth-child(1) { animation-delay: 0.1s; }
+.section-reveal.active .project-card:nth-child(2) { animation-delay: 0.2s; }
+.section-reveal.active .project-card:nth-child(3) { animation-delay: 0.3s; }
+
+.section-reveal.active .skill-card:nth-child(1) { animation-delay: 0.1s; }
+.section-reveal.active .skill-card:nth-child(2) { animation-delay: 0.2s; }
+.section-reveal.active .skill-card:nth-child(3) { animation-delay: 0.3s; }
+.section-reveal.active .skill-card:nth-child(4) { animation-delay: 0.4s; }
+
+
+/* =======================================================================
+   SECCIÓN: HABILIDADES (Estilo Tarjetas con Icono)
+   ======================================================================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.skill-card {
+    background-color: #0d1117; /* Fondo oscuro elegante */
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 30px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px); /* Efecto de flotar sutil */
+    border-color: #4ade80; /* El borde se pinta de tu verde al pasar el mouse */
+}
+
+/* El cuadro suave detrás del icono (como en tu imagen) */
+.skill-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    background-color: rgba(74, 222, 128, 0.1); /* Verde transparente */
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.skill-icon-wrapper i {
+    font-size: 1.6rem;
+    color: #4ade80; /* Tu color verde */
+}
+
+.skill-card h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Estilo de la lista con viñetas personalizadas */
+.skill-list {
+    list-style: none; /* Quitamos las viñetas por defecto */
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    color: #a3a3a3; /* Texto gris claro */
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* El punto de la lista en color verde */
+.skill-list li::before {
+    content: '•';
+    color: #4ade80; /* Color del punto */
+    position: absolute;
+    left: 0;
+    top: -2px;
+    font-size: 1.2rem;
+}

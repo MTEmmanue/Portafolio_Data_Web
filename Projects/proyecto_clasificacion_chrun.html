@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telecom X: Predicción de Churn - Emmanuel Tapia</title>
+    <link rel="stylesheet" href="/Styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo" style="display: flex; align-items: center;">
+            <i class="fas fa-circle-nodes data-navbar-icon"></i>
+            
+            <span style="font-weight: 700; font-size: 1.3rem; color: #fff;">Em.Data</span>
+        </div>
+
+        <div class="nav-actions">
+            <ul class="nav-links">
+                <li><a href="../index.html#inicio">Inicio</a></li>
+                <li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+                <li><a href="../index.html#proyectos" class="active">Proyectos</a></li>
+            </ul>
+
+            <a href="https://www.linkedin.com/in/emmanuel-mtapia/" target="_blank" class="icon-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/MTEmmanue" target="_blank" class="icon-link">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:emmanuel.tp.2024@gmail.com" class="icon-link">
+                <i class="far fa-envelope"></i>
+            </a>
+            <a href="../index.html#proyectos" class="btn-primary">
+                Ver proyectos 
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </nav>
+
+
+    <section class="project-hero container">
+        <div class="project-hero-content">
+            <a href="../index.html#proyectos" class="back-link"><i class="fas fa-arrow-left"></i> Volver al portafolio</a>
+            
+            <h1>Telecom X: Predicción de Abandono (Churn)</h1>
+            
+            <p class="project-subtitle">
+                Proyecto Challenge Alura Latam. Construcción de un modelo de clasificación para anticipar la fuga de clientes, permitiendo pasar de estrategias reactivas a retención proactiva.
+            </p>
+
+            <div class="tech-stack">
+                <span class="tag">Python</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">Logistic Regression</span>
+                <span class="tag">SMOTE</span>
+                <span class="tag">Pandas</span>
+            </div>
+            
+            <div class="hero-buttons" style="margin-top: 40px;">
+                <a href="https://github.com/MTEmmanue/Challenge_TelecomX_Predicci-n_Abandono" target="_blank" class="btn-primary">
+                    Ver Repositorio <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+        <div class="project-hero-image">
+            <img src="/img/predicciones_chrun.png" alt="Análisis de Churn">
+        </div>
+    </section>
+
+    
+    <section class="project-section container">
+        <h2>El Reto: Retención de Clientes</h2>
+        <p class="section-intro">
+            En telecomunicaciones, perder un cliente es más costoso que retenerlo. El desafío fue analizar la base de datos para entender <strong>por qué se van</strong> y predecir <strong>quiénes serán los siguientes</strong>.
+        </p>
+
+        <div class="results-grid">
+            
+            <div class="metrics-card">
+                <h3 style="margin-bottom: 24px; color: white;">Definición del Problema</h3>
+                
+                <div class="metric-row">
+                    <span class="metric-name" style="font-weight: 700;">
+                        <i class="fas fa-bullseye"></i> Target (Y)
+                    </span>
+                    <span class="metric-val" style="font-size: 1.1rem;">Abandono (Sí/No)</span>
+                </div>
+                
+                <div class="metric-row" style="align-items: flex-start; flex-direction: column; gap: 10px;">
+                    <span class="metric-name" style="font-weight: 700;">
+                        <i class="fas fa-tools"></i> Ingeniería de Datos
+                    </span>
+                    <div style="font-family: monospace; color: white; font-size: 0.95rem; line-height: 1.6;">
+                        • Limpieza de Nulos<br>
+                        • One-Hot Encoding<br>
+                        • Escalado MinMax
+                    </div>
+                </div>
+            </div>
+
+            <div class="findings-content" style="padding-left: 20px;">
+                <h3>Ingeniería de Datos y Análisis</h3>
+                <ul>
+                    <li style="margin-bottom: 20px;">
+                        <strong>Limpieza:</strong> Detección de valores nulos y conversión crítica de la columna <code>'Cargos Totales'</code> a formato numérico.
+                    </li>
+                    <li style="margin-bottom: 20px;">
+                        <strong>Transformación:</strong> Los algoritmos no entienden texto. Apliqué <em>One-Hot Encoding</em> para variables como 'Fibra Óptica' y <em>MinMax Scaling</em> para normalizar los cargos monetarios.
+                    </li>
+                    <li style="margin-bottom: 20px;">
+                        <strong>Desbalance Detectado:</strong> El EDA reveló que había muchos más clientes fieles que fugas. Esto hacía que los modelos "aprendieran" a decir siempre "se queda", ignorando el problema real.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section container">
+        <div class="two-column-grid challenge-layout">
+            
+            <div class="text-content">
+                <h2>¿Qué impulsa el abandono?</h2>
+                <p class="section-intro">
+                    El modelo no es una caja negra. Identificamos las variables con mayor peso predictivo para entender el comportamiento del cliente.
+            
+                    El análisis reveló que el <strong>factor económico</strong> (Cargos Mensuales) y la <strong>antigüedad</strong> son determinantes. Además, ciertos servicios premium (Fibra Óptica, Streaming) muestran una correlación alta con la fuga, probablemente debido a ofertas competitivas o expectativas de calidad no cumplidas.
+                </p>
+            </div>
+
+            <div class="box-card variables-card">
+                <h4 class="card-title"><i class="fas fa-sort-amount-down"></i> Variables de Mayor Impacto</h4>
+                
+                <div class="variables-list">
+                    
+                    <div class="var-row">
+                        <div class="badge-container">
+                            <span class="var-badge predictor" style="color: #ff6384; border-color: #ff6384;">
+                                <i class="fas fa-money-bill-wave"></i> #1 Impacto
+                            </span>
+                        </div>
+                        <p class="var-text">
+                            <strong>Cargos Mensuales</strong>
+                            <br><span class="unit" style="font-size: 0.85rem;">Mayor costo = Mayor riesgo de fuga.</span>
+                        </p>
+                    </div>
+
+                    <div class="var-row">
+                        <div class="badge-container">
+                            <span class="var-badge predictor" style="color: #ffcd56; border-color: #ffcd56;">
+                                <i class="fas fa-hourglass-half"></i> #2 Lealtad
+                            </span>
+                        </div>
+                        <p class="var-text">
+                            <strong>Meses como cliente</strong>
+                            <br><span class="unit" style="font-size: 0.85rem;">Clientes nuevos son más volátiles.</span>
+                        </p>
+                    </div>
+
+                    <div class="var-row">
+                        <div class="badge-container">
+                            <span class="var-badge predictor">
+                                <i class="fas fa-wifi"></i> Servicios
+                            </span>
+                        </div>
+                        <p class="var-text">
+                            <strong>Fibra Óptica & Streaming TV</strong>
+                            <br><span class="unit" style="font-size: 0.85rem;">Servicios críticos en la decisión.</span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="project-section container bg-alt">
+        <h2>Batalla de Algoritmos: ¿Cuál elegir?</h2>
+        <p class="section-intro">
+            No me conformé con el primer resultado. Evalué 3 escenarios para encontrar el equilibrio entre precisión y detección de fugas (Recall).
+        </p>
+
+        <div class="business-value-container">
+            
+            <div class="biz-card" style="border-left: 3px solid #555;">
+                <h3><i class="fas fa-robot"></i> Random Forest</h3>
+                <p style="margin-bottom: 12px; font-weight: bold; color: #aaa;">Recall: 47%</p>
+                <p>Alta exactitud general, pero pésimo detectando fugas reales. Dejaba escapar a más de la mitad de los clientes en riesgo.</p>
+            </div>
+
+            <div class="biz-card" style="border-left: 3px solid #555;">
+                <h3><i class="fas fa-chart-line"></i> Logistic Reg. (Base)</h3>
+                <p style="margin-bottom: 12px; font-weight: bold; color: #aaa;">Recall: 53%</p>
+                <p>Mejoró levemente respecto al bosque aleatorio, pero seguía siendo insuficiente para una estrategia de negocio agresiva.</p>
+            </div>
+
+            <div class="biz-card" style="border-left: 3px solid var(--accent); background: linear-gradient(145deg, #1a1a1a, #0d0d0d);">
+                <h3><i class="fas fa-trophy" style="color: var(--accent);"></i> LogReg + SMOTE</h3>
+                <p style="margin-bottom: 12px; font-weight: bold; color: var(--accent);">Recall: 73% (Ganador)</p>
+                <p>El balanceo de clases disparó la capacidad de detección. Prioricé este modelo porque es más costoso perder un cliente que dar un descuento innecesario.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="project-section container">
+        <h2>Conceptos Clave del Modelo</h2>
+        <p class="section-intro">
+            Para lograr el resultado del 73%, utilicé dos conceptos técnicos clave, explicados de forma sencilla.
+        </p>
+        
+        <div class="results-grid">
+            <div class="metrics-card">
+                <h3 style="margin-bottom: 24px; color: white;">¿Qué es SMOTE?</h3>
+                <p style="color: #ccc; line-height: 1.6; margin-bottom: 20px;">
+                    Imagina que tienes 90 clientes felices y solo 10 enojados. Si entrenas así, el modelo aprenderá a ignorar a los enojados.
+                </p>
+                <p style="color: #ccc; line-height: 1.6;">
+                    <strong>SMOTE (Synthetic Minority Over-sampling Technique)</strong> crea "clones digitales" de esos clientes enojados basándose en sus características, equilibrando la balanza 50/50 para que el modelo esté obligado a aprender a detectarlos.
+                </p>
+            </div>
+
+            <div class="findings-content" style="padding-left: 20px;">
+                <h3>¿Por qué Regresión para Clasificar?</h3>
+                <ul>
+                    <li style="margin-bottom: 20px;">
+                        <strong>No es una regresión normal:</strong> Aunque se llama "Regresión Logística", se usa para clasificación binaria (Sí/No).
+                    </li>
+                    <li style="margin-bottom: 20px;">
+                        <strong>Probabilidad:</strong> En lugar de predecir un número infinito, calcula la <strong>probabilidad (entre 0 y 1)</strong> de que un cliente abandone.
+                    </li>
+                    <li style="margin-bottom: 20px;">
+                        <strong>Decisión:</strong> Si la probabilidad supera el 50% (umbral), el modelo lo etiqueta como "Riesgo de Abandono", permitiendo a la empresa actuar.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="project-section container bg-alt">
+        <h2>Entrega de Valor y Resultados</h2>
+        <div class="results-grid">
+            
+            <div class="metrics-card">
+                <h3 style="margin-bottom: 24px; color: white;">Métricas Finales</h3>
+                
+                <div class="metric-row">
+                    <span class="metric-name">Recall (Detección)</span>
+                    <span class="metric-val highlight">73%</span>
+                </div>
+                
+                <div class="metric-row">
+                    <span class="metric-name">Accuracy (Exactitud)</span>
+                    <span class="metric-val">76%</span>
+                </div>
+                
+                <div class="metric-row">
+                    <span class="metric-name">Status</span>
+                    <span class="metric-val" style="font-size: 1rem; color: #aaa;">Serializado (.pkl)</span>
+                </div>
+            </div>
+
+            <div class="findings-content" style="padding-left: 20px;">
+                <h3>Impacto Potencial</h3>
+                <ul>
+                    <li style="margin-bottom: 20px;">
+                        <strong>Retención Proactiva:</strong> Gracias al Recall del 73%, la empresa puede identificar correctamente a <strong>7 de cada 10 clientes</strong> que están pensando en irse.
+                    </li>
+                    <li style="margin-bottom: 20px;">
+                        <strong>Minimización de Riesgo:</strong> Al priorizar el Recall, aceptamos algunos "falsos positivos" (clientes que parecen irse pero no lo harían) porque el costo de darles un incentivo es mucho menor que el costo de perder un cliente real.
+                    </li>
+                    <li style="margin-bottom: 20px;">
+                        <strong>Listo para Producción:</strong> El modelo final fue exportado con <code>Joblib</code>, listo para integrarse en el CRM de la empresa.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="footer-cta container">
+        <div class="cta-box">
+            <div class="cta-content">
+                <h3>Explora el código fuente</h3>
+                <p>Revisa el notebook con el EDA, la implementación de SMOTE y la evaluación detallada en GitHub.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://github.com/MTEmmanue/Challenge_TelecomX_Predicci-n_Abandono" target="_blank" class="btn-primary">Ir al Repositorio <i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Emmanuel Tapia · 2026</span>
+            <div class="footer-nav">
+                <a href="../index.html#inicio">Inicio</a>
+                <a href="../index.html#sobre-mi">Sobre mí</a>
+                <a href="../index.html#proyectos">Proyectos</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
