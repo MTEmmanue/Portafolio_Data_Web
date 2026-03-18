@@ -33,9 +33,14 @@ Soy un estudiante universitario enfocado en el mundo del **Data Analytics** y la
 
 - **Pipeline de Machine Learning**  
   Desarrollo de un sistema modular de Machine Learning "End-to-End".
+  <br>
+  👉 [Ver proyecto](https://mtemmanue.github.io/Portafolio_Data_Web/Projects/proyecto_regresion.html)
+  
 
 - **Modelo para evitar Abandono de Clientes**  
-  Construcción de un modelo de clasificación para anticipar la fuga de clientes,
+  Construcción de un modelo de clasificación para anticipar la fuga de clientes.
+  <br>
+  👉 [Ver proyecto](https://mtemmanue.github.io/Portafolio_Data_Web/Projects/proyecto_clasificacion_chrun.html)
 
 ---
 
