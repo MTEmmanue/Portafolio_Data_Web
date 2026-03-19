@@ -13,7 +13,7 @@ Bienvenido a mi portafolio web, un espacio donde combino **datos, tecnología y 
 🌐 **[Portafolio Web](https://mtemmanue.github.io/Portafolio_Data_Web)** 
 <br>
 <br>
-<img width="1862" height="870" alt="image" src="https://github.com/user-attachments/assets/e7a08cda-e3e9-40fa-acd3-06af05850e19" />
+<img width="1854" height="894" alt="image" src="https://github.com/user-attachments/assets/03c4e3af-a991-4e56-9e90-e642e36574e1" />
 
 ---
 
