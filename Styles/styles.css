@@ -579,7 +579,7 @@ section h2 { font-size: 2rem; margin-bottom: 8px; }
 .link-pill:hover {
     border-color: var(--accent); /* El borde se vuelve del color de acento */
     transform: translateY(-2px); /* Pequeña elevación */
-    background-color: rgba(0, 229, 153, 0.05); /* (Opcional) Fondo verde muy sutil */
+    background-color: rgba(0, 150, 255, 0.1); /* Fondo azul brillante sutil */
 }
 
 /* Contenedor izquierdo (Icono + Texto) */
