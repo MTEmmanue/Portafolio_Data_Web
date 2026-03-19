@@ -5,8 +5,8 @@
     --bg-card-hover: #141414;
     --text-white: #ffffff;
     --text-gray: #a1a1aa;
-    --accent: #00E599; /* Verde Neón */
-    --accent-hover: #00c282;
+    --accent: #0096FF; /* Azul brillante */
+    --accent-hover: #33B1FF; /* Azul claro para transiciones */
     --border-color: #27272a;
     --font-main: 'Inter', system-ui, -apple-system, sans-serif;
     --radius-lg: 16px;
@@ -48,13 +48,13 @@ ul { list-style: none; }
 .brand-extension {
     /* Esto es la clave: fuente de código y color de acento */
     font-family: 'Fira Code', 'Roboto Mono', monospace; /* Usa tu fuente mono preferida */
-    color: var(--accent-color, #4ade80); /* Tu color verde */
+    color: var(--accent-color, #0096FF); /* Tu color azul brillante */
     font-weight: 400; /* Un poco más ligero que el nombre */
 }
 
 .tech-icon {
     font-family: 'Fira Code', 'Roboto Mono', monospace; /* Fuente de código */
-    color: var(--accent-color, #4ade80); /* Tu color verde */
+    color: var(--accent-color, #0096FF); /* Tu color azul brillante */
     font-weight: 800;
     font-size: 1.4rem;
     margin-right: 8px; /* Espacio entre el icono y el nombre */
@@ -63,12 +63,12 @@ ul { list-style: none; }
 
 /* --- ESTILO PARA EL NUEVO ICONO DE DATA EN NAVBAR --- */
 .data-navbar-icon {
-    color: var(--accent-color, #4ade80); /* Tu color verde exacto */
+    color: var(--accent-color, #0096FF); /* Tu color azul brillante */
     font-size: 1.4rem; /* Un poco más grande para que destaque */
     margin-right: 12px; /* Espacio entre el icono y "Em.Data" */
     
     /* Un brillo sutil para que se vea "tecnológico" */
-    filter: drop-shadow(0 0 5px rgba(74, 222, 128, 0.4));
+    filter: drop-shadow(0 0 5px rgba(0, 150, 255, 0.4));
     
     /* Alineación fina */
     display: flex;
@@ -77,13 +77,13 @@ ul { list-style: none; }
 
 /* Asegúrate de tener los estilos del nombre también */
 .brand-name { font-weight: 700; font-size: 1.3rem; color: #fff; }
-.brand-extension { font-family: monospace; color: var(--accent-color, #4ade80); font-weight: 400; }
+.brand-extension { font-family: monospace; color: var(--accent-color, #0096FF); font-weight: 400; }
 
 /* Opcional: Un pequeño efecto terminal al icono cuadrado existente */
 .logo-icon {
     /* Si quieres que se vea más "tech", añade un borde sutil brillante */
-    box-shadow: 0 0 10px rgba(74, 222, 128, 0.2); /* Resplandor verde suave */
-    border: 1px solid rgba(74, 222, 128, 0.3);
+    box-shadow: 0 0 10px rgba(0, 150, 255, 0.2); /* Resplandor azul suave */
+    border: 1px solid rgba(0, 150, 255, 0.3);
 }
 
 /* --- Botones --- */
@@ -1187,10 +1187,10 @@ project-section container {
     background: transparent; /* Fondo transparente como en la imagen */
 }
 
-/* Modificador Verde (Vaca Lechera) */
+/* Modificador Azul Brillante */
 .badge-green {
-    color: #4ade80;
-    border: 1px solid #4ade80;
+    color: #0096FF;
+    border: 1px solid #0096FF;
 }
 
 /* Modificador Amarillo (Hardcore Users) */
@@ -1317,7 +1317,7 @@ project-section container {
 
 .skill-card:hover {
     transform: translateY(-5px); /* Efecto de flotar sutil */
-    border-color: #4ade80; /* El borde se pinta de tu verde al pasar el mouse */
+    border-color: #0096FF; /* El borde se pinta de tu azul brillante al pasar el mouse */
 }
 
 /* El cuadro suave detrás del icono (como en tu imagen) */
@@ -1327,14 +1327,14 @@ project-section container {
     justify-content: center;
     width: 55px;
     height: 55px;
-    background-color: rgba(74, 222, 128, 0.1); /* Verde transparente */
+    background-color: rgba(0, 150, 255, 0.1); /* Azul brillante transparente */
     border-radius: 12px;
     margin-bottom: 25px;
 }
 
 .skill-icon-wrapper i {
     font-size: 1.6rem;
-    color: #4ade80; /* Tu color verde */
+    color: #0096FF; /* Tu color azul brillante */
 }
 
 .skill-card h3 {
@@ -1360,10 +1360,10 @@ project-section container {
     line-height: 1.5;
 }
 
-/* El punto de la lista en color verde */
+/* El punto de la lista en color azul neón */
 .skill-list li::before {
     content: '•';
-    color: #4ade80; /* Color del punto */
+    color: #0096FF; /* Color del punto */
     position: absolute;
     left: 0;
     top: -2px;
