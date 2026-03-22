@@ -630,10 +630,11 @@ section h2 { font-size: 2rem; margin-bottom: 8px; }
     justify-content: space-between;
     transition: transform 0.2s;
 }
-.project-card:hover { transform: translateY(-5px); border-color: #444; }
+.project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
 
 .project-header { display: flex; justify-content: space-between; margin-bottom: 16px; }
-.project-header h3 { font-size: 1.1rem; }
+.project-header h3 { font-size: 1.1rem; transition: color 0.2s; }
+.project-card:hover .project-header h3 { color: var(--accent); }
 .project-header i { color: var(--text-gray); }
 
 .project-card p { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 24px; flex-grow: 1; }
@@ -644,8 +645,17 @@ section h2 { font-size: 2rem; margin-bottom: 8px; }
 }
 
 .project-link {
-    color: var(--accent); font-size: 0.9rem; font-weight: 600;
+    color: var(--text-white); font-size: 0.9rem; font-weight: 400;
     display: inline-flex; align-items: center; gap: 6px;
+    transition: color 0.2s ease, font-weight 0.2s ease;
+}
+.project-link:hover {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.project-actions {
+    display: flex; gap: 24px; align-items: center;
 }
 
 /* --- Experience Section --- */
