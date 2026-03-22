@@ -388,9 +388,9 @@ ul { list-style: none; }
 /* Efecto Hover (Al pasar el mouse) */
 .tech-badge:hover {
     border-color: var(--accent); /* Borde Verde Neón */
-    background-color: rgba(0, 229, 153, 0.05); /* Fondo verde muy sutil */
+    background-color: rgba(0, 150, 255, 0.1); /* Fondo azul muy sutil */
     transform: translateY(-3px); /* Pequeña elevación */
-    box-shadow: 0 5px 15px rgba(0, 229, 153, 0.1); /* Sombra suave verde */
+    box-shadow: 0 5px 15px rgba(0, 150, 255, 0.1); /* Sombra suave azul */
 }
 
 /* --- Profile Card (Right Side) --- */
