@@ -1318,11 +1318,15 @@ project-section container {
 }
 
 .skill-card {
-    background-color: #0d1117; /* Fondo oscuro elegante */
+    background: var(--bg-card);
     border: 1px solid #222;
     border-radius: 12px;
     padding: 30px;
     transition: transform 0.3s ease, border-color 0.3s ease;
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    grid-template-rows: auto auto;
+    gap: 0 20px;
 }
 
 .skill-card:hover {
@@ -1339,7 +1343,9 @@ project-section container {
     height: 55px;
     background-color: rgba(0, 150, 255, 0.1); /* Azul brillante transparente */
     border-radius: 12px;
-    margin-bottom: 25px;
+    grid-row: 1;
+    grid-column: 1;
+    align-self: center;
 }
 
 .skill-icon-wrapper i {
@@ -1350,8 +1356,12 @@ project-section container {
 .skill-card h3 {
     color: #ffffff;
     font-size: 1.3rem;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    margin-top: 0;
     font-weight: 700;
+    grid-row: 1;
+    grid-column: 2;
+    align-self: center;
 }
 
 /* Estilo de la lista con viñetas personalizadas */
@@ -1359,6 +1369,9 @@ project-section container {
     list-style: none; /* Quitamos las viñetas por defecto */
     padding: 0;
     margin: 0;
+    grid-row: 2;
+    grid-column: 1 / -1;
+    margin-top: 25px;
 }
 
 .skill-list li {
