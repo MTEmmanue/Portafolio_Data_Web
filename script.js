@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const texts = ['Analista de Datos', 'Científico de Datos'];
+    const texts = [['Analista de Datos', 'Científico de Datos', 'Transformo datos en decisiones | SQL • Python • Power BI • ETL']];
     const typingElement = document.getElementById('typing-text');
     let textIndex = 0;
     let charIndex = 0;
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     // Efecto de escritura
-    const texts = ['Analista de Datos', 'Científico de Datos'];
+    const texts = ['Analista de Datos', 'Científico de Datos','SQL • Python • Power BI • ETL'];
     const typingElement = document.getElementById('typing-text');
     let textIndex = 0;
     let charIndex = 0;
