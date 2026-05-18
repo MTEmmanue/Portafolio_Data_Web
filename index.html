@@ -10,6 +10,10 @@
 </head>
 <body>
 
+    <!-- <button class="theme-toggle" id="theme-toggle" title="Cambiar tema">
+        <i class="fas fa-moon"></i>
+    </button> -->
+
     <nav class="navbar">
         <div class="logo" style="display: flex; align-items: center;">
             <i class="fas fa-circle-nodes data-navbar-icon"></i>
@@ -85,52 +89,74 @@
         <div class="profile-card">
             <div class="profile-header">
                 <div class="avatar-container">
-                    <img src="img/alegre_oficcina_sin_fondo.png" alt="Foto Perfil" class="avatar"> <div class="profile-info">
-                        <h3>Emmanuel Tapia</h3>
-                        <p>Analista & Científico de Datos</p>
-                    </div>
+                    <img src="img/alegre_oficcina_sin_fondo.png" alt="Foto Perfil" class="avatar"> 
                 </div>
-                <div class="profile-icons">
-                    <a href="https://www.linkedin.com/in/emmanuel-mtapia/" target="_blank" class="icon-link">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            
-            <a href="https://github.com/MTEmmanue" target="_blank" class="icon-link">
-                <i class="fab fa-github"></i>
-            </a>
+                <div class="profile-info">
+                    <h3>Emmanuel Tapia</h3>
+                    <p>Analista & Científico de Datos</p>
+                    <div class="profile-icons">
+                        <a href="https://www.linkedin.com/in/emmanuel-mtapia/" target="_blank" class="icon-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/MTEmmanue" target="_blank" class="icon-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             
-            <div class="card-section">
-                <h4><i class="fas fa-database"></i> Enfoque</h4>
-                <p>ETL · Análisis de Datos · Modelos Predictivos </p>
-            </div>
-
-            <div class="card-section">
-                <h4><i class="fas fa-graduation-cap"></i> Educación</h4>
-                <p><strong>Universidad Veracruzana</strong></p>
-                <p class="sub-text">Licenciatura en Ingeniería en Ciencia de datos · Agosto de 2024 - Cursando</p>
-            </div>
-
-            <div class="card-section">
-                <h4><i class="fas fa-chart-bar"></i> Métricas clave</h4>
-                <div class="mini-metrics">
-                    <div class="mini-metric">
-                        <span>Precisión de modelos</span>
-                        <strong style="color: var(--accent);"> 70 - 90% (R²)</strong>
+            <div class="card-sections-container">
+                <div class="card-section">
+                    <div class="section-icon">
+                        <i class="fas fa-database"></i>
                     </div>
-                    
-                    <div class="mini-metric">
-                        <span>Herramientas</span>
-                        <strong>5+ (Stack)</strong>
-                    </div>
-                    
-                    <div class="mini-metric">
-                        <span>Proyectos</span>  
-                        <strong>4+ Realizados</strong>
+                    <h4>Enfoque</h4>
+                    <div class="section-content">
+                        <p>ETL · Análisis de Datos · Modelos Predictivos</p>
                     </div>
                 </div>
-                <p class="sub-text" style="margin-top: 10px;">Enfoque en calidad de código y reproducibilidad.</p>
+
+                <div class="card-section">
+                    <div class="section-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>Educación</h4>
+                    <div class="section-content">
+                        <p><strong>Universidad Veracruzana</strong></p>
+                        <p class="sub-text">Licenciatura en Ingeniería en Ciencia de datos · Agosto de 2024 - Cursando</p>
+                    </div>
+                </div>
+
+                <div class="card-section">
+                    <div class="section-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h4>Métricas clave</h4>
+                    <div class="section-content">
+                        <div class="mini-metrics">
+                            <div class="mini-metric">
+                                <span>Precisión de modelos</span>
+                                <strong style="color: var(--accent);">70 - 90%</strong>
+                                
+                            </div>
+                            <div class="mini-metric">
+                                <span>Herramientas</span>
+                                <strong>5+</strong>
+                                <span class="metric-label">(Stack)</span>
+                            </div>
+                            <div class="mini-metric">
+                                <span>Proyectos</span>  
+                                <strong>4+</strong>
+                                <span class="metric-label">Realizados</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <i class="fas fa-code"></i>
+                    <p>Enfoque en calidad de código y reproducibilidad.</p>
+                </div>
             </div>
         </div>
     </section>
